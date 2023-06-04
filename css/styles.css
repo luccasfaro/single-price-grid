@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600;700;800&display=swap');
+
+:root {
+   --_font-main: 'Karla', sans-serif;
+
+   --cyan: hsl(179, 62%, 43%);
+   --bg-cyan-why-us: hsla(179, 62%, 43%, .7);
+   --bright-yellow: hsl(71, 73%, 54%);
+   --paragraph: hsl(218, 22%, 67%);
+   --light-gray: hsl(204, 43%, 93%);
+   --white: #fff;
+}
+
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: var(--_font-main);
+   list-style-type: none;
+}
+
+/* Page Content */
+
+#container {
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+#content {
+   max-width: 700px;
+   display: grid;
+   grid-template-areas:
+      "community community"
+      "monthly-subscription why-us";
+   grid-template-columns: 1fr 1fr;
+   box-shadow: 0px 0px 20px rgba(0, 0, 0, .3);
+   border-radius: 10px;
+   margin: 1em;
+}
+
+#community,
+#monthly-subscription,
+#why-us {
+   padding: 2.5em;
+   display: flex;
+   flex-direction: column;
+   gap: 1em;
+}
+
+#community {
+   border-radius: 10px;
+   grid-area: community;
+   background-color: var(--white);
+}
+
+#monthly-subscription {
+   grid-area: monthly-subscription;
+   background-color: var(--cyan);
+   border-radius: 0 0 0 10px;
+}
+
+#why-us {
+   grid-area: why-us;
+   background-color: var(--bg-cyan-why-us);
+   border-radius: 0 0 10px 0;
+}
+
+#monthly-subscription h2,
+#why-us h2 {
+   color: var(--white);
+   font-size: 1.4em;
+}
+
+/* community */
+#community h2 {
+   font-size: 1.8em;
+   color: var(--cyan);
+   margin-bottom: .5em;
+}
+
+#community .guarantee {
+   font-size: 1.3em;
+   color: var(--bright-yellow);
+}
+
+#community p {
+   font-size: 1.1em;
+   color: var(--paragraph);
+   line-height: 25px;
+}
+
+/* monthly-subscription */
+#monthly-subscription-plan {
+   display: flex;
+   align-items: center;
+   gap: .8em;
+}
+
+#monthly-subscription .price {
+   font-size: 2em;
+   color: var(--white);
+   font-weight: 600;
+}
+
+#monthly-subscription .period {
+   font-size: 1.1em;
+   font-weight: 300;
+   color: var(--light-gray);
+}
+
+#monthly-subscription p {
+   color: var(--white);
+   font-size: 1em;
+   margin-bottom: 1em;
+}
+
+#monthly-subscription .btn-sign-up {
+   padding: .8em;
+   font-size: 1.2em;
+   color: var(--white);
+   background-color: var(--bright-yellow);
+   border: none;
+   border-radius: 10px;
+   cursor: pointer;
+   opacity: .9;
+   transition: .2s;
+   box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
+}
+
+#monthly-subscription .btn-sign-up:hover {
+   opacity: 1;
+   transform: translateY(3px);
+}
+
+/* why-us */
+#why-us ul {
+   display: flex;
+   flex-direction: column;
+   gap: .2em;
+}
+
+#why-us ul li {
+   font-size: 1em;
+   color: var(--light-gray);
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+   #content {
+      grid-template-areas:
+         "community"
+         "monthly-subscription"
+         "why-us";
+      grid-template-columns: 1fr;
+   }
+   #monthly-subscription {
+      border-radius: 0;
+   }
+   #why-us {
+      border-radius: 0 0 10px 10px;
+   }
+
+
+   #community h2 {
+      font-size: 1.5em;
+   }
+   #community .guarantee {
+      font-size: 1.1em;
+   }
+   #community p {
+      font-size: 1em;
+   }
+
+   #monthly-subscription h2,
+   #why-us h2 {
+      font-size: 1.4em;
+   }
+
+   #monthly-subscription p {
+      font-size: 1.1em;
+   }
+   #monthly-subscription .btn-sign-up {
+      opacity: 1;
+   }
+
+   #why-us ul li {
+      font-size: 1.1em;
+   }
+}
